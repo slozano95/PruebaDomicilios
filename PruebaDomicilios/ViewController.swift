@@ -18,6 +18,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        getDatos()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +68,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "CeldaRuta", for: indexPath) as! CeldaRutaTableViewCell
         cell.nameRuta.text = listaRutas[indexPath.row].name
         cell.descriptionRuta.text = listaRutas[indexPath.row].description
+        cell.imagenRuta.fromURL(urlString: listaRutas[indexPath.row].img_url)
         return cell
     }
 }

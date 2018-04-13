@@ -4,16 +4,17 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Rutas-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PruebaDomicilios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Rutas" id="BYZ-38-t0r" customClass="ViewController" customModule="PruebaDomicilios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CeldaRuta" rowHeight="100" id="OTK-6W-D37">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CeldaRuta" rowHeight="100" id="OTK-6W-D37" customClass="CeldaRutaTableViewCell" customModule="PruebaDomicilios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OTK-6W-D37" id="UPb-ln-igL">
@@ -64,8 +65,17 @@
                                                 <constraint firstItem="7ST-OJ-E7j" firstAttribute="top" secondItem="UPb-ln-igL" secondAttribute="top" constant="10" id="gE9-mu-KDG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionRuta" destination="ivw-wk-h8H" id="qak-WW-6Cg"/>
+                                            <outlet property="imagenRuta" destination="R5D-km-EFv" id="sL1-Gu-CcB"/>
+                                            <outlet property="nameRuta" destination="7ST-OJ-E7j" id="G2o-if-bfb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Eim-ce-3F9"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cjj-Fx-KCL"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,6 +89,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CzR-kF-736"/>
                     <connections>
+                        <outlet property="tableView" destination="mxZ-Ks-BOf" id="kfl-WY-zc6"/>
                         <segue destination="KTg-XC-Rex" kind="show" identifier="Segue_VerParadas" id="ppa-PL-lLS"/>
                     </connections>
                 </viewController>

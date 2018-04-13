@@ -16,6 +16,7 @@
 		DEA8D6C22080425400CAB8F6 /* Ruta.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C12080425400CAB8F6 /* Ruta.swift */; };
 		DEA8D6C42080437F00CAB8F6 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C32080437F00CAB8F6 /* Stop.swift */; };
 		DEA8D6C620804A5300CAB8F6 /* CeldaRutaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C520804A5300CAB8F6 /* CeldaRutaTableViewCell.swift */; };
+		DEA8D6C820804FAE00CAB8F6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C720804FAE00CAB8F6 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		DEA8D6C12080425400CAB8F6 /* Ruta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruta.swift; sourceTree = "<group>"; };
 		DEA8D6C32080437F00CAB8F6 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		DEA8D6C520804A5300CAB8F6 /* CeldaRutaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaRutaTableViewCell.swift; sourceTree = "<group>"; };
+		DEA8D6C720804FAE00CAB8F6 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		EDD7893737D77D9C5B4EFD14 /* Pods-PruebaDomicilios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaDomicilios.release.xcconfig"; path = "Pods/Target Support Files/Pods-PruebaDomicilios/Pods-PruebaDomicilios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				DEA8D6BB20803DBF00CAB8F6 /* Info.plist */,
 				DEA8D6C12080425400CAB8F6 /* Ruta.swift */,
 				DEA8D6C32080437F00CAB8F6 /* Stop.swift */,
+				DEA8D6C720804FAE00CAB8F6 /* Helper.swift */,
 			);
 			path = PruebaDomicilios;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				DEA8D6B020803DBF00CAB8F6 /* AppDelegate.swift in Sources */,
 				DEA8D6C22080425400CAB8F6 /* Ruta.swift in Sources */,
 				DEA8D6C42080437F00CAB8F6 /* Stop.swift in Sources */,
+				DEA8D6C820804FAE00CAB8F6 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
