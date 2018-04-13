@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520F226C5DF4043C78380E93 /* Pods_PruebaDomicilios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A421CBF1A51A9D6C180BB7 /* Pods_PruebaDomicilios.framework */; };
 		DEA8D6B020803DBF00CAB8F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6AF20803DBF00CAB8F6 /* AppDelegate.swift */; };
 		DEA8D6B220803DBF00CAB8F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6B120803DBF00CAB8F6 /* ViewController.swift */; };
 		DEA8D6B520803DBF00CAB8F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA8D6B320803DBF00CAB8F6 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73A421CBF1A51A9D6C180BB7 /* Pods_PruebaDomicilios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PruebaDomicilios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C76653E5BCC55D53DCB1E0F8 /* Pods-PruebaDomicilios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaDomicilios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PruebaDomicilios/Pods-PruebaDomicilios.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA8D6AC20803DBF00CAB8F6 /* PruebaDomicilios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PruebaDomicilios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA8D6AF20803DBF00CAB8F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA8D6B120803DBF00CAB8F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		DEA8D6B620803DBF00CAB8F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEA8D6B920803DBF00CAB8F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEA8D6BB20803DBF00CAB8F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDD7893737D77D9C5B4EFD14 /* Pods-PruebaDomicilios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaDomicilios.release.xcconfig"; path = "Pods/Target Support Files/Pods-PruebaDomicilios/Pods-PruebaDomicilios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520F226C5DF4043C78380E93 /* Pods_PruebaDomicilios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B29F6991953D03EE51249B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C76653E5BCC55D53DCB1E0F8 /* Pods-PruebaDomicilios.debug.xcconfig */,
+				EDD7893737D77D9C5B4EFD14 /* Pods-PruebaDomicilios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B5AF39689512456723A18DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73A421CBF1A51A9D6C180BB7 /* Pods_PruebaDomicilios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DEA8D6A320803DBF00CAB8F6 = {
 			isa = PBXGroup;
 			children = (
 				DEA8D6AE20803DBF00CAB8F6 /* PruebaDomicilios */,
 				DEA8D6AD20803DBF00CAB8F6 /* Products */,
+				2B29F6991953D03EE51249B2 /* Pods */,
+				9B5AF39689512456723A18DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEA8D6BE20803DBF00CAB8F6 /* Build configuration list for PBXNativeTarget "PruebaDomicilios" */;
 			buildPhases = (
+				7C40AF91241199EE80404FF4 /* [CP] Check Pods Manifest.lock */,
 				DEA8D6A820803DBF00CAB8F6 /* Sources */,
 				DEA8D6A920803DBF00CAB8F6 /* Frameworks */,
 				DEA8D6AA20803DBF00CAB8F6 /* Resources */,
+				2B5177484ADA7174C6EB6CED /* [CP] Embed Pods Frameworks */,
+				FA9F399070F1B9D069A0F64A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B5177484ADA7174C6EB6CED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PruebaDomicilios/Pods-PruebaDomicilios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C40AF91241199EE80404FF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA9F399070F1B9D069A0F64A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PruebaDomicilios/Pods-PruebaDomicilios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DEA8D6A820803DBF00CAB8F6 /* Sources */ = {
@@ -272,11 +347,13 @@
 		};
 		DEA8D6BF20803DBF00CAB8F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C76653E5BCC55D53DCB1E0F8 /* Pods-PruebaDomicilios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JANL22TX3K;
 				INFOPLIST_FILE = PruebaDomicilios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.craneatic.PruebaDomicilios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,11 +364,13 @@
 		};
 		DEA8D6C020803DBF00CAB8F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDD7893737D77D9C5B4EFD14 /* Pods-PruebaDomicilios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JANL22TX3K;
 				INFOPLIST_FILE = PruebaDomicilios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.craneatic.PruebaDomicilios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
