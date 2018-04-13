@@ -13,6 +13,8 @@
 		DEA8D6B520803DBF00CAB8F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA8D6B320803DBF00CAB8F6 /* Main.storyboard */; };
 		DEA8D6B720803DBF00CAB8F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA8D6B620803DBF00CAB8F6 /* Assets.xcassets */; };
 		DEA8D6BA20803DBF00CAB8F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA8D6B820803DBF00CAB8F6 /* LaunchScreen.storyboard */; };
+		DEA8D6C22080425400CAB8F6 /* Ruta.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C12080425400CAB8F6 /* Ruta.swift */; };
+		DEA8D6C42080437F00CAB8F6 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C32080437F00CAB8F6 /* Stop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		DEA8D6B620803DBF00CAB8F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEA8D6B920803DBF00CAB8F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEA8D6BB20803DBF00CAB8F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEA8D6C12080425400CAB8F6 /* Ruta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruta.swift; sourceTree = "<group>"; };
+		DEA8D6C32080437F00CAB8F6 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		EDD7893737D77D9C5B4EFD14 /* Pods-PruebaDomicilios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaDomicilios.release.xcconfig"; path = "Pods/Target Support Files/Pods-PruebaDomicilios/Pods-PruebaDomicilios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,8 @@
 				DEA8D6B620803DBF00CAB8F6 /* Assets.xcassets */,
 				DEA8D6B820803DBF00CAB8F6 /* LaunchScreen.storyboard */,
 				DEA8D6BB20803DBF00CAB8F6 /* Info.plist */,
+				DEA8D6C12080425400CAB8F6 /* Ruta.swift */,
+				DEA8D6C32080437F00CAB8F6 /* Stop.swift */,
 			);
 			path = PruebaDomicilios;
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 			files = (
 				DEA8D6B220803DBF00CAB8F6 /* ViewController.swift in Sources */,
 				DEA8D6B020803DBF00CAB8F6 /* AppDelegate.swift in Sources */,
+				DEA8D6C22080425400CAB8F6 /* Ruta.swift in Sources */,
+				DEA8D6C42080437F00CAB8F6 /* Stop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
