@@ -13,6 +13,8 @@ import SwiftyJSON
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
 
     var listaRutas:[Ruta] = []
+    var rutaSeleccionada:Ruta!
+    
     @IBOutlet weak var tableView:UITableView!
     
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     func getDatos(){
         print("OBTENIENDO RUTAS")
-        Alamofire.request("https://api.myjson.com/bins/10yg1t").responseJSON{ response in
+        Alamofire.request(Helper.urlRutas).responseJSON{ response in
             if let data = response.data, let text = String(data: data, encoding: .utf8){
                 if(response.response?.statusCode == 200){
                     print("\tPARSING JSON")
@@ -43,10 +45,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                     }
                     self.tableView.reloadData()
                 }else{
-//                    Helper.anerrorocurred_pleasetryagainlater()
+                    //TODO IMPLEMENTAR ERROR
                 }
             }else{
-//                Helper.anerrorocurred_pleasetryagainlater()
+                //TODO IMPLEMENTAR ERROR 
             }
         }
     }
@@ -70,6 +72,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.descriptionRuta.text = listaRutas[indexPath.row].description
         cell.imagenRuta.fromURL(urlString: listaRutas[indexPath.row].img_url)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rutaSeleccionada = listaRutas[indexPath.row]
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "Segue_VerRuta", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "Segue_VerRuta"){
+            var viewDestino = segue.destination as! DetalleRutaViewController
+            viewDestino.RutaSeleccionada = rutaSeleccionada
+        }
     }
 }
 

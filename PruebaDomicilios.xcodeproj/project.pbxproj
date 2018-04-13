@@ -17,6 +17,8 @@
 		DEA8D6C42080437F00CAB8F6 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C32080437F00CAB8F6 /* Stop.swift */; };
 		DEA8D6C620804A5300CAB8F6 /* CeldaRutaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C520804A5300CAB8F6 /* CeldaRutaTableViewCell.swift */; };
 		DEA8D6C820804FAE00CAB8F6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C720804FAE00CAB8F6 /* Helper.swift */; };
+		DEA8D6CA2080538100CAB8F6 /* DetalleRutaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6C92080538100CAB8F6 /* DetalleRutaViewController.swift */; };
+		DEA8D6CC20805B6200CAB8F6 /* ParadaMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6CB20805B6200CAB8F6 /* ParadaMapa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		DEA8D6C32080437F00CAB8F6 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		DEA8D6C520804A5300CAB8F6 /* CeldaRutaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaRutaTableViewCell.swift; sourceTree = "<group>"; };
 		DEA8D6C720804FAE00CAB8F6 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		DEA8D6C92080538100CAB8F6 /* DetalleRutaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleRutaViewController.swift; sourceTree = "<group>"; };
+		DEA8D6CB20805B6200CAB8F6 /* ParadaMapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParadaMapa.swift; sourceTree = "<group>"; };
 		EDD7893737D77D9C5B4EFD14 /* Pods-PruebaDomicilios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaDomicilios.release.xcconfig"; path = "Pods/Target Support Files/Pods-PruebaDomicilios/Pods-PruebaDomicilios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,8 @@
 				DEA8D6AF20803DBF00CAB8F6 /* AppDelegate.swift */,
 				DEA8D6B120803DBF00CAB8F6 /* ViewController.swift */,
 				DEA8D6C520804A5300CAB8F6 /* CeldaRutaTableViewCell.swift */,
+				DEA8D6C92080538100CAB8F6 /* DetalleRutaViewController.swift */,
+				DEA8D6CB20805B6200CAB8F6 /* ParadaMapa.swift */,
 				DEA8D6B320803DBF00CAB8F6 /* Main.storyboard */,
 				DEA8D6B620803DBF00CAB8F6 /* Assets.xcassets */,
 				DEA8D6B820803DBF00CAB8F6 /* LaunchScreen.storyboard */,
@@ -225,6 +231,8 @@
 			files = (
 				DEA8D6B220803DBF00CAB8F6 /* ViewController.swift in Sources */,
 				DEA8D6C620804A5300CAB8F6 /* CeldaRutaTableViewCell.swift in Sources */,
+				DEA8D6CA2080538100CAB8F6 /* DetalleRutaViewController.swift in Sources */,
+				DEA8D6CC20805B6200CAB8F6 /* ParadaMapa.swift in Sources */,
 				DEA8D6B020803DBF00CAB8F6 /* AppDelegate.swift in Sources */,
 				DEA8D6C22080425400CAB8F6 /* Ruta.swift in Sources */,
 				DEA8D6C42080437F00CAB8F6 /* Stop.swift in Sources */,
