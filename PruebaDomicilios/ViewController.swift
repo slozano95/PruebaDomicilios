@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SwiftSpinner
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
 
@@ -17,10 +18,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBOutlet weak var tableView:UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        Helper.setNavBar(self, hideBackButton: true)
+        self.view.backgroundColor = UIColor(hexString: Helper.ColorBarraNavegacion)
+        self.tableView.backgroundColor = UIColor(hexString: Helper.ColorBarraNavegacion)
+        self.tableView.separatorColor = UIColor(hexString: Helper.ColorTextoBarraNavegacion)
+        getDatos()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        getDatos()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,11 +36,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Dispose of any resources that can be recreated.
     }
     func getDatos(){
-        print("OBTENIENDO RUTAS")
+        SwiftSpinner.show("Cargando Datos...")
+        self.listaRutas.removeAll()
         Alamofire.request(Helper.urlRutas).responseJSON{ response in
             if let data = response.data, let text = String(data: data, encoding: .utf8){
                 if(response.response?.statusCode == 200){
-                    print("\tPARSING JSON")
                     let json = JSON(data: response.data!)
                     for (_,value):(String,JSON) in json["school_buses"]{
                         var ruta:Ruta = Ruta()
@@ -44,11 +52,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                         self.listaRutas.append(ruta)
                     }
                     self.tableView.reloadData()
+                    SwiftSpinner.hide()
                 }else{
-                    //TODO IMPLEMENTAR ERROR
+                    SwiftSpinner.show("Error decodificando JSON.",animated:false).addTapHandler({
+                        SwiftSpinner.hide()
+                        self.getDatos()
+                    })
                 }
             }else{
-                //TODO IMPLEMENTAR ERROR 
+                SwiftSpinner.show("Ha ocurrido un error en la comunicación con el servidor.",animated:false).addTapHandler({
+                    SwiftSpinner.hide()
+                    self.getDatos()
+                })
             }
         }
     }
@@ -58,7 +73,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("CONTEO RUTAS \(self.listaRutas.count)")
         return self.listaRutas.count
     }
     

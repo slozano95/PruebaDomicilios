@@ -10,30 +10,74 @@ import UIKit
 import MapKit
 import Alamofire
 import SwiftyJSON
+import SwiftSpinner
 
-class DetalleRutaViewController: UIViewController {
+class DetalleRutaViewController: UIViewController,MKMapViewDelegate {
 
     var RutaSeleccionada:Ruta!
     var listaStops:[Stop] = []
+    var locationManager: CLLocationManager!
+    
+    var nombreRuta:UILabel = UILabel()
+    var descripcionRuta:UILabel = UILabel()
+    var imagenRuta:UIImageView = UIImageView()
+    var viewSuperior:UIView = UIView()
+    var ultimaParada:String = ""
+    
     @IBOutlet weak var mapa:MKMapView!
-    @IBOutlet weak var nombreRuta:UILabel!
-    @IBOutlet weak var descripcionRuta:UILabel!
-    @IBOutlet weak var imagenRuta:UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Helper.setNavBarCustom(self, hideBackButton: false, texto: "Detalles de Ruta")
+        getDatos()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewSuperior.frame = CGRect(x: 10, y: -100, width: self.mapa.frame.width-20, height:100)
+        viewSuperior.backgroundColor = UIColor(hexString: Helper.ColorBarraNavegacion)
+        viewSuperior.roundCorners(radius: 10)
+        viewSuperior.layer.borderColor = UIColor.white.cgColor
+        viewSuperior.layer.borderWidth = 2
+        view.addSubview(viewSuperior)
+        
         nombreRuta.text = RutaSeleccionada.name
+        nombreRuta.textColor = UIColor(hexString: Helper.ColorTextoBarraNavegacion)
+        nombreRuta.font = UIFont(name: "HelveticaNeue-Light", size: 25)
+        nombreRuta.adjustsFontSizeToFitWidth = true
+        nombreRuta.minimumScaleFactor = 0.5
+        viewSuperior.addSubview(nombreRuta)
+        
         descripcionRuta.text = RutaSeleccionada.description
+        descripcionRuta.textColor = UIColor(hexString: Helper.ColorTextoBarraNavegacion)
+        descripcionRuta.font = UIFont(name: "HelveticaNeue-Light", size: 18)
+        descripcionRuta.adjustsFontSizeToFitWidth = true
+        descripcionRuta.minimumScaleFactor = 0.5
+        viewSuperior.addSubview(descripcionRuta)
+        
         imagenRuta.fromURL(urlString: RutaSeleccionada.img_url)
-        // Do any additional setup after loading the view.
-        getDatos()
+        viewSuperior.addSubview(imagenRuta)
+        
+        viewSuperior.addConstraintsWithFormat(format: "V:|-15-[v0(70)]-15-|", views: imagenRuta)
+        viewSuperior.addConstraintsWithFormat(format: "V:|-15-[v0(30)]-5-[v1]", views: nombreRuta,descripcionRuta)
+        viewSuperior.addConstraintsWithFormat(format: "H:|-10-[v0(70)]-[v1]-|", views: imagenRuta,nombreRuta)
+        viewSuperior.addConstraintsWithFormat(format: "H:|-10-[v0]-[v1]-|", views: imagenRuta,descripcionRuta)
+        
+        self.mapa.isRotateEnabled = true
+        self.mapa.showsUserLocation = true
+        self.mapa.delegate = self
+        
+        UIView.animate(withDuration: 1.5) {
+            self.viewSuperior.frame = CGRect(x: 10, y: 100, width: self.mapa.frame.width-20, height:100)
+        }
     }
+    
     func getDatos(){
-        print("OBTENIENDO DETALLES DE RUTA")
+        SwiftSpinner.show("Cargando Datos...")
+        self.listaStops.removeAll()
         Alamofire.request(RutaSeleccionada.stops_url).responseJSON{ response in
             if let data = response.data, let text = String(data: data, encoding: .utf8){
                 if(response.response?.statusCode == 200){
-                    print("\tPARSING JSON")
                     let json = JSON(data: response.data!)
                     for (_,value):(String,JSON) in json["stops"]{
                         var stop:Stop = Stop()
@@ -42,28 +86,84 @@ class DetalleRutaViewController: UIViewController {
                         self.listaStops.append(stop)
                     }
                     self.mostrarStops()
+                    SwiftSpinner.hide()
                 }else{
-                    //TODO IMPLEMENTAR ERROR
+                    SwiftSpinner.show("Error decodificando JSON.",animated:false).addTapHandler({
+                        SwiftSpinner.hide()
+                        self.getDatos()
+                    })
                 }
             }else{
-                //TODO IMPLEMENTAR ERROR 
+                SwiftSpinner.show("Ha ocurrido un error en la comunicación con el servidor.",animated:false).addTapHandler({
+                    SwiftSpinner.hide()
+                    self.getDatos()
+                })
             }
         }
     }
+    
     func mostrarStops(){
         var contador = 1
         for stop in listaStops {
-            print("\(stop.lat),\(stop.lng)")
             let parada = ParadaMapa(nombreParada: "Parada \(contador)",
-                coordenadas: CLLocationCoordinate2D(latitude: stop.lat, longitude: stop.lng))
-            self.mapa.addAnnotation(parada)
+                coordenadas: CLLocationCoordinate2D(latitude: stop.lat, longitude: stop.lng),imageURL:RutaSeleccionada.img_url)
+            DispatchQueue.main.async {
+                self.mapa.addAnnotation(parada)
+            }
             contador += 1
         }
-        let tamañoRegionCentrada: CLLocationDistance = 1000
-        let regionCentrada = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: listaStops[0].lat, longitude: listaStops[0].lng),tamañoRegionCentrada, tamañoRegionCentrada)
+        let tamañoRegionCentrada: CLLocationDistance = 200
+        let regionCentrada = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: listaStops[contador-2].lat, longitude: listaStops[contador-2].lng),tamañoRegionCentrada, tamañoRegionCentrada)
+        ultimaParada = "Parada \(contador-1)"
         self.mapa.setRegion(regionCentrada, animated: true)
+        crearRuta()
     }
-
+    
+    func crearRuta(){
+        var coords:[CLLocationCoordinate2D] = []
+        for puntos in listaStops{
+            var coord = CLLocationCoordinate2D(latitude: puntos.lat, longitude: puntos.lng)
+            coords.append(coord)
+        }
+        let linea = MKPolyline(coordinates: coords, count: coords.count)
+        mapa.add(linea)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation.isKind(of: MKUserLocation.self){
+            return nil
+        }
+        if !annotation.isKind(of: ParadaMapa.self){
+            var pinAnnotationView = mapa.dequeueReusableAnnotationView(withIdentifier: "DefaultPinView")
+            if pinAnnotationView == nil {
+                pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "DefaultPinView")
+            }
+            return pinAnnotationView
+        }
+        var viewParada: ParadaMapaView? = mapa.dequeueReusableAnnotationView(withIdentifier: "Parada") as? ParadaMapaView
+        if viewParada == nil {
+            viewParada = ParadaMapaView(annotation: annotation, reuseIdentifier: "Parada")
+        }
+        let annotation = annotation as! ParadaMapa
+        viewParada?.imageView.fromURL(urlString: RutaSeleccionada.img_url)
+        viewParada?.label.text = annotation.nombreParada
+        if(annotation.nombreParada == ultimaParada){
+            Helper.pulzo(view: viewParada!, duration: 0.8, start: 0.8, end: 1, autoreverse: true, repeatCount: 500)
+        }
+        viewParada?.annotation = annotation
+        return viewParada
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let polyline = overlay as? MKPolyline {
+            let testlineRenderer = MKPolylineRenderer(polyline: polyline)
+            testlineRenderer.strokeColor = UIColor(hexString: Helper.ColorBarraNavegacion)
+            testlineRenderer.lineWidth = 2.0
+            return testlineRenderer
+        }
+        return MKPolylineRenderer()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

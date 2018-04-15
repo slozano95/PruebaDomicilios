@@ -5,6 +5,7 @@ target 'PruebaDomicilios' do
 
   pod 'SwiftyJSON', :git => 'https://github.com/acegreen/SwiftyJSON.git', :branch => 'swift3'
   pod 'Alamofire', '~> 4.0'
+  pod 'SwiftSpinner'
 end
 post_install do |installer|
   installer.pods_project.targets.each do |target|

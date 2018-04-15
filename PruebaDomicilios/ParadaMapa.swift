@@ -10,10 +10,12 @@ import MapKit
 class ParadaMapa: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     let nombreParada: String?
+    let imageURL:String?
     
-    init(nombreParada:String, coordenadas: CLLocationCoordinate2D) {
+    init(nombreParada:String, coordenadas: CLLocationCoordinate2D,imageURL:String) {
         self.nombreParada = nombreParada
         self.coordinate = coordenadas
+        self.imageURL = imageURL
         super.init()
     }
 }

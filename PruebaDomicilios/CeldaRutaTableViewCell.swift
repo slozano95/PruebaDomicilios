@@ -16,6 +16,9 @@ class CeldaRutaTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        nameRuta.textColor = UIColor(hexString: Helper.ColorTextoBarraNavegacion)
+        descriptionRuta.textColor = UIColor(hexString: Helper.ColorTextoBarraNavegacion)
+        self.backgroundColor = UIColor(hexString: Helper.ColorBarraNavegacion)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

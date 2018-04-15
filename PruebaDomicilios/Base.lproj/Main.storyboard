@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ime-Zj-qzn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ime-Zj-qzn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mxZ-Ks-BOf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mxZ-Ks-BOf">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -41,7 +41,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="bAh-3C-P3h"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -105,54 +105,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5xu-8V-i8i">
-                                <rect key="frame" x="0.0" y="170.5" width="375" height="496.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A3H-SB-e5M">
-                                <rect key="frame" x="12" y="76" width="79.5" height="79.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="SR8-L5-Coj"/>
-                                    <constraint firstAttribute="height" constant="80" id="kq2-bb-kin"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Ruta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y5K-YW-nKO">
-                                <rect key="frame" x="107" y="76" width="253" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="cBf-y3-baA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción Ruta" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="RAF-v4-IRY">
-                                <rect key="frame" x="107" y="111" width="253" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="A3H-SB-e5M" firstAttribute="top" secondItem="d43-M3-Ea2" secondAttribute="top" constant="12" id="6Hd-Uh-Xs3"/>
-                            <constraint firstItem="d43-M3-Ea2" firstAttribute="trailing" secondItem="Y5K-YW-nKO" secondAttribute="trailing" constant="15" id="7M7-zv-WzR"/>
-                            <constraint firstItem="5xu-8V-i8i" firstAttribute="top" secondItem="A3H-SB-e5M" secondAttribute="bottom" constant="15" id="AYz-pC-wyU"/>
                             <constraint firstItem="5xu-8V-i8i" firstAttribute="trailing" secondItem="d43-M3-Ea2" secondAttribute="trailing" id="Cuh-z1-QtC"/>
-                            <constraint firstItem="d43-M3-Ea2" firstAttribute="trailing" secondItem="RAF-v4-IRY" secondAttribute="trailing" constant="15" id="MJr-Vd-aSz"/>
-                            <constraint firstItem="RAF-v4-IRY" firstAttribute="top" secondItem="Y5K-YW-nKO" secondAttribute="bottom" constant="5" id="TY1-KH-0gj"/>
-                            <constraint firstItem="RAF-v4-IRY" firstAttribute="leading" secondItem="A3H-SB-e5M" secondAttribute="trailing" constant="15" id="VTh-z2-WIa"/>
+                            <constraint firstItem="5xu-8V-i8i" firstAttribute="top" secondItem="d43-M3-Ea2" secondAttribute="top" id="Mm0-Lj-CA2"/>
                             <constraint firstAttribute="bottom" secondItem="5xu-8V-i8i" secondAttribute="bottom" id="Xkx-hp-Q4x"/>
                             <constraint firstItem="5xu-8V-i8i" firstAttribute="leading" secondItem="d43-M3-Ea2" secondAttribute="leading" id="kC7-dz-wgc"/>
-                            <constraint firstItem="Y5K-YW-nKO" firstAttribute="top" secondItem="d43-M3-Ea2" secondAttribute="top" constant="12" id="mRu-8w-zER"/>
-                            <constraint firstItem="RAF-v4-IRY" firstAttribute="top" secondItem="Y5K-YW-nKO" secondAttribute="bottom" constant="5" id="q59-mv-G0R"/>
-                            <constraint firstItem="A3H-SB-e5M" firstAttribute="leading" secondItem="d43-M3-Ea2" secondAttribute="leading" constant="12" id="zbS-tM-xWo"/>
-                            <constraint firstItem="Y5K-YW-nKO" firstAttribute="leading" secondItem="A3H-SB-e5M" secondAttribute="trailing" constant="15" id="zes-jn-PDb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d43-M3-Ea2"/>
                     </view>
                     <connections>
-                        <outlet property="descripcionRuta" destination="RAF-v4-IRY" id="udd-FF-jVE"/>
-                        <outlet property="imagenRuta" destination="A3H-SB-e5M" id="aKP-e3-6AS"/>
                         <outlet property="mapa" destination="5xu-8V-i8i" id="rI7-tu-DGE"/>
-                        <outlet property="nombreRuta" destination="Y5K-YW-nKO" id="Wue-0e-SQv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pd-J8-yHg" userLabel="First Responder" sceneMemberID="firstResponder"/>

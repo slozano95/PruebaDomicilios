@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		520F226C5DF4043C78380E93 /* Pods_PruebaDomicilios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A421CBF1A51A9D6C180BB7 /* Pods_PruebaDomicilios.framework */; };
+		DE918A5E2080F3B300509694 /* ParadaMapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918A5D2080F3B300509694 /* ParadaMapaView.swift */; };
+		DE918A602082C26400509694 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE918A5F2082C26400509694 /* MapKit.framework */; };
 		DEA8D6B020803DBF00CAB8F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6AF20803DBF00CAB8F6 /* AppDelegate.swift */; };
 		DEA8D6B220803DBF00CAB8F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8D6B120803DBF00CAB8F6 /* ViewController.swift */; };
 		DEA8D6B520803DBF00CAB8F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA8D6B320803DBF00CAB8F6 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		73A421CBF1A51A9D6C180BB7 /* Pods_PruebaDomicilios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PruebaDomicilios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76653E5BCC55D53DCB1E0F8 /* Pods-PruebaDomicilios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaDomicilios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PruebaDomicilios/Pods-PruebaDomicilios.debug.xcconfig"; sourceTree = "<group>"; };
+		DE918A5D2080F3B300509694 /* ParadaMapaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParadaMapaView.swift; sourceTree = "<group>"; };
+		DE918A5F2082C26400509694 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DEA8D6AC20803DBF00CAB8F6 /* PruebaDomicilios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PruebaDomicilios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA8D6AF20803DBF00CAB8F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA8D6B120803DBF00CAB8F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE918A602082C26400509694 /* MapKit.framework in Frameworks */,
 				520F226C5DF4043C78380E93 /* Pods_PruebaDomicilios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +69,7 @@
 		9B5AF39689512456723A18DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE918A5F2082C26400509694 /* MapKit.framework */,
 				73A421CBF1A51A9D6C180BB7 /* Pods_PruebaDomicilios.framework */,
 			);
 			name = Frameworks;
@@ -95,6 +101,7 @@
 				DEA8D6C520804A5300CAB8F6 /* CeldaRutaTableViewCell.swift */,
 				DEA8D6C92080538100CAB8F6 /* DetalleRutaViewController.swift */,
 				DEA8D6CB20805B6200CAB8F6 /* ParadaMapa.swift */,
+				DE918A5D2080F3B300509694 /* ParadaMapaView.swift */,
 				DEA8D6B320803DBF00CAB8F6 /* Main.storyboard */,
 				DEA8D6B620803DBF00CAB8F6 /* Assets.xcassets */,
 				DEA8D6B820803DBF00CAB8F6 /* LaunchScreen.storyboard */,
@@ -136,12 +143,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Craneatic;
 				TargetAttributes = {
 					DEA8D6AB20803DBF00CAB8F6 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -233,6 +245,7 @@
 				DEA8D6C620804A5300CAB8F6 /* CeldaRutaTableViewCell.swift in Sources */,
 				DEA8D6CA2080538100CAB8F6 /* DetalleRutaViewController.swift in Sources */,
 				DEA8D6CC20805B6200CAB8F6 /* ParadaMapa.swift in Sources */,
+				DE918A5E2080F3B300509694 /* ParadaMapaView.swift in Sources */,
 				DEA8D6B020803DBF00CAB8F6 /* AppDelegate.swift in Sources */,
 				DEA8D6C22080425400CAB8F6 /* Ruta.swift in Sources */,
 				DEA8D6C42080437F00CAB8F6 /* Stop.swift in Sources */,
@@ -276,6 +289,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -283,6 +297,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -333,6 +348,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -340,6 +356,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -373,6 +390,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C76653E5BCC55D53DCB1E0F8 /* Pods-PruebaDomicilios.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JANL22TX3K;
@@ -390,6 +408,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EDD7893737D77D9C5B4EFD14 /* Pods-PruebaDomicilios.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JANL22TX3K;
