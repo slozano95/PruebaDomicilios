@@ -7,6 +7,10 @@
 //
 
 import MapKit
+/**
+ Clase que define el objeto que representa las paradas del mapa.
+ */
+
 class ParadaMapa: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     let nombreParada: String?

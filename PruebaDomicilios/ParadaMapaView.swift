@@ -7,11 +7,14 @@
 //
 
 import MapKit
+/**
+ Clase que define el view que se utiliza para mostrar cada parada en el mapa.
+ */
 class ParadaMapaView: MKAnnotationView {
     
     public var imageView: UIImageView!
     public var label:UILabel!
-    
+ 
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         self.frame = CGRect(x: 0, y: 0, width: 80, height: 60)

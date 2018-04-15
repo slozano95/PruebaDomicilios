@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+/**
+ Clase que define la celda que se utiliza para mostrar los datos de la lista de rutas.
+ */
 class CeldaRutaTableViewCell: UITableViewCell {
     @IBOutlet weak var nameRuta:UILabel!
     @IBOutlet weak var descriptionRuta:UILabel!

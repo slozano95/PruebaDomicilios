@@ -10,14 +10,17 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SwiftSpinner
-
+/**
+  Clase que controla la interacción de la vista que muestra la lista de rutas.
+ */
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
 
     var listaRutas:[Ruta] = []
     var rutaSeleccionada:Ruta!
     
     @IBOutlet weak var tableView:UITableView!
-    
+    /// Previo a mostrar el view, se define la barra de navegación y se definen colores de la UI.
+    /// - See also: Helper.setNavBar()
     override func viewWillAppear(_ animated: Bool) {
         Helper.setNavBar(self, hideBackButton: true)
         self.view.backgroundColor = UIColor(hexString: Helper.ColorBarraNavegacion)
@@ -28,13 +31,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    /**
+     # getDatos
+     Mediante Alamofire se genera la petición get a la url definida en Helper, se espera recibir texto en formato JSON, se decodifica utilizando SwiftyJSON y se carga en memoria local, se recarga la tabla para mostrar los datos si toda la operación fue exitosa.
+     Se utiliza SwiftSpinner para mostrar views de carga de datos y errores, permite hacer mejor la UX.
+     */
+    /// - Requires: Alamofire, SwiftyJSON, SwiftySpinner
+    /// - SeeAlso: Helper.urlRutas
+ 
     func getDatos(){
         SwiftSpinner.show("Cargando Datos...")
         self.listaRutas.removeAll()
@@ -87,6 +96,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.imagenRuta.fromURL(urlString: listaRutas[indexPath.row].img_url)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         rutaSeleccionada = listaRutas[indexPath.row]
         self.tableView.deselectRow(at: indexPath, animated: true)

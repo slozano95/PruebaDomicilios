@@ -11,8 +11,15 @@ import MapKit
 import Alamofire
 import SwiftyJSON
 import SwiftSpinner
+import CoreLocation
 
-class DetalleRutaViewController: UIViewController,MKMapViewDelegate {
+/**
+ Clase que controla la interacción de la vista de detalles de ruta.
+ */
+ ///- Note: la variable RutaSeleccionada se debe asignar desde el prepare del segue que invoca esta clase
+
+
+class DetalleRutaViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
 
     var RutaSeleccionada:Ruta!
     var listaStops:[Stop] = []
@@ -66,12 +73,24 @@ class DetalleRutaViewController: UIViewController,MKMapViewDelegate {
         self.mapa.isRotateEnabled = true
         self.mapa.showsUserLocation = true
         self.mapa.delegate = self
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         UIView.animate(withDuration: 1.5) {
             self.viewSuperior.frame = CGRect(x: 10, y: 100, width: self.mapa.frame.width-20, height:100)
         }
     }
     
+    /**
+     # getDatos
+     Mediante Alamofire se genera la petición get a la url obtenida desde el objeto recibido por el segue invocado en la tabla de ViewControllerse espera recibir texto en formato JSON, se decodifica utilizando SwiftyJSON y se carga en memoria local.
+     Se utiliza SwiftSpinner para mostrar views de carga de datos y errores, permite hacer mejor la UX.
+     */
+    /// - Requires: Alamofire, SwiftyJSON, SwiftySpinner
+    /// - SeeAlso: mostrarStops()
+    /// - SeeAlso: crearRuta()
     func getDatos(){
         SwiftSpinner.show("Cargando Datos...")
         self.listaStops.removeAll()
@@ -101,7 +120,12 @@ class DetalleRutaViewController: UIViewController,MKMapViewDelegate {
             }
         }
     }
-    
+    /**
+     # mostrarStops
+     Se obtienen las coordenadas a partir de las paradas cargados en memoria, se añaden al mapa mediante la cola principal de UI.
+     Se define ultimaParada para animarla en crearRuta
+     */
+    /// - SeeAlso: crearRuta()
     func mostrarStops(){
         var contador = 1
         for stop in listaStops {
