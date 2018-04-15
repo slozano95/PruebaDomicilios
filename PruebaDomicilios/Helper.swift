@@ -12,10 +12,12 @@ import UIKit
 Clase con variables y métodos estáticos reutilizables en toda la aplicación.
 */
 class Helper: NSObject {
-    
+    /**URL de donde se obtienen las rutas*/
     static var urlRutas = "https://api.myjson.com/bins/10yg1t"
     
+    /**Color de la barra de navegación*/
     static let ColorBarraNavegacion:String = "05477F"
+    /**Color del texto de la barra de navegación*/
     static let ColorTextoBarraNavegacion:String = "FFF"
     /**
      # setNavBar

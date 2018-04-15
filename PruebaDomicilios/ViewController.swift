@@ -14,12 +14,16 @@ import SwiftSpinner
   Clase que controla la interacción de la vista que muestra la lista de rutas.
  */
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
-
+    /**Variable donde se asignan la rutas obtenidas*/
     var listaRutas:[Ruta] = []
+    
+    /**Variable donde se asigna la ruta seleccionada en la tabla*/
     var rutaSeleccionada:Ruta!
     
+    /**IBOutlet que representa la tabla*/
     @IBOutlet weak var tableView:UITableView!
-    /* Previo a mostrar el view, se define la barra de navegación y se definen colores de la UI.
+    
+    /** Previo a mostrar el view, se define la barra de navegación y se definen colores de la UI.
      - See also: Helper.setNavBar()*/
     override func viewWillAppear(_ animated: Bool) {
         Helper.setNavBar(self, hideBackButton: true)
@@ -29,10 +33,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         getDatos()
     }
     
+    /**viewDidLoad*/
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    /**didReceiveMemoryWarning*/
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
     }
@@ -77,18 +82,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
     }
     
+    /**numberOfSections*/
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    /**tableView numberOfRowsInSection*/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.listaRutas.count
     }
     
+    /**tableView heightForRowAt*/
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
+    /**tableView cellForRowAt*/
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CeldaRuta", for: indexPath) as! CeldaRutaTableViewCell
         cell.nameRuta.text = listaRutas[indexPath.row].name
@@ -96,13 +105,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.imagenRuta.fromURL(urlString: listaRutas[indexPath.row].img_url)
         return cell
     }
-    
+    /**tableView didSelectRowAt*/
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         rutaSeleccionada = listaRutas[indexPath.row]
         self.tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "Segue_VerRuta", sender: self)
     }
-    
+    /**prepare for segue
+     Asigna la ruta seleccionada a la variable del view DetalleRutaViewController*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "Segue_VerRuta"){
             var viewDestino = segue.destination as! DetalleRutaViewController

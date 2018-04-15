@@ -19,24 +19,35 @@ import CoreLocation
 */
 
 class DetalleRutaViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
-
+    /**Variable donde se asigna la ruta recibida desde el ViewController*/
     var RutaSeleccionada:Ruta!
+    
+    /**Lista donde se asignan las paradas recibidas*/
     var listaStops:[Stop] = []
+    
+    /**Manejador de ubicación*/
     var locationManager: CLLocationManager!
     
+    /**Nombre de la ruta*/
     var nombreRuta:UILabel = UILabel()
+    /**Descripción de la ruta*/
     var descripcionRuta:UILabel = UILabel()
+    /**Imagen de la ruta*/
     var imagenRuta:UIImageView = UIImageView()
+    /**View animado*/
     var viewSuperior:UIView = UIView()
+    /**Ultima parada para animar*/
     var ultimaParada:String = ""
-    
+    /**IBOutlet que representa el mapa de la vista*/
     @IBOutlet weak var mapa:MKMapView!
     
+    /**viewWillAppear*/
     override func viewWillAppear(_ animated: Bool) {
         Helper.setNavBarCustom(self, hideBackButton: false, texto: "Detalles de Ruta")
         getDatos()
     }
-    
+    /**viewDidLoad
+     Se inicializa el view superior para animarlo y el manejador de ubicación*/
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -143,6 +154,10 @@ class DetalleRutaViewController: UIViewController,MKMapViewDelegate,CLLocationMa
         crearRuta()
     }
     
+    /**
+    # crearRuta
+    Genera una polilinea que une los puntos de paradas presentes en el mapa.
+    */
     func crearRuta(){
         var coords:[CLLocationCoordinate2D] = []
         for puntos in listaStops{
@@ -153,6 +168,7 @@ class DetalleRutaViewController: UIViewController,MKMapViewDelegate,CLLocationMa
         mapa.add(linea)
     }
     
+    /** mapView viewFor*/
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation.isKind(of: MKUserLocation.self){
             return nil
@@ -170,14 +186,14 @@ class DetalleRutaViewController: UIViewController,MKMapViewDelegate,CLLocationMa
         }
         let annotation = annotation as! ParadaMapa
         viewParada?.imageView.fromURL(urlString: RutaSeleccionada.img_url)
-        viewParada?.label.text = annotation.nombreParada
+        viewParada?.titulo.text = annotation.nombreParada
         if(annotation.nombreParada == ultimaParada){
             Helper.pulzo(view: viewParada!, duration: 0.8, start: 0.8, end: 1, autoreverse: true, repeatCount: 500)
         }
         viewParada?.annotation = annotation
         return viewParada
     }
-    
+    /**mapView rendererFor*/
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let polyline = overlay as? MKPolyline {
             let testlineRenderer = MKPolylineRenderer(polyline: polyline)
@@ -187,21 +203,9 @@ class DetalleRutaViewController: UIViewController,MKMapViewDelegate,CLLocationMa
         }
         return MKPolylineRenderer()
     }
-    
+    /** didReceiveMemoryWarning*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
