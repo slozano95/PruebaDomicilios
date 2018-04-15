@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DetalleRutaViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/DetalleRutaViewController" class="dashAnchor"></a>
+    <a title="DetalleRutaViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (25% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        DetalleRutaViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CeldaRutaTableViewCell.html">CeldaRutaTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DetalleRutaViewController.html">DetalleRutaViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Helper.html">Helper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ParadaMapa.html">ParadaMapa</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ParadaMapaView.html">ParadaMapaView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Ruta.html">Ruta</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Stop.html">Stop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewController.html">ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>DetalleRutaViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">DetalleRutaViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span><span class="kt">MKMapViewDelegate</span><span class="p">,</span><span class="kt">CLLocationManagerDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Clase que controla la interacción de la vista de detalles de ruta.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    la variable RutaSeleccionada se debe asignar desde el prepare del segue que invoca esta clase
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC0D12SeleccionadaSQyAA0D0CGvp"></a>
+                    <a name="//apple_ref/swift/Property/RutaSeleccionada" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC0D12SeleccionadaSQyAA0D0CGvp">RutaSeleccionada</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">RutaSeleccionada</span><span class="p">:</span><span class="kt"><a href="../Classes/Ruta.html">Ruta</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC10listaStopsSayAA4StopCGvp"></a>
+                    <a name="//apple_ref/swift/Property/listaStops" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC10listaStopsSayAA4StopCGvp">listaStops</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">listaStops</span><span class="p">:[</span><span class="kt"><a href="../Classes/Stop.html">Stop</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC15locationManagerSQySo010CLLocationH0CGvp"></a>
+                    <a name="//apple_ref/swift/Property/locationManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC15locationManagerSQySo010CLLocationH0CGvp">locationManager</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">locationManager</span><span class="p">:</span> <span class="kt">CLLocationManager</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC06nombreD0So7UILabelCvp"></a>
+                    <a name="//apple_ref/swift/Property/nombreRuta" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC06nombreD0So7UILabelCvp">nombreRuta</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">nombreRuta</span><span class="p">:</span><span class="kt">UILabel</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC011descripcionD0So7UILabelCvp"></a>
+                    <a name="//apple_ref/swift/Property/descripcionRuta" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC011descripcionD0So7UILabelCvp">descripcionRuta</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">descripcionRuta</span><span class="p">:</span><span class="kt">UILabel</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC06imagenD0So07UIImageE0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/imagenRuta" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC06imagenD0So07UIImageE0Cvp">imagenRuta</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">imagenRuta</span><span class="p">:</span><span class="kt">UIImageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC12viewSuperiorSo6UIViewCvp"></a>
+                    <a name="//apple_ref/swift/Property/viewSuperior" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC12viewSuperiorSo6UIViewCvp">viewSuperior</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">viewSuperior</span><span class="p">:</span><span class="kt">UIView</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC12ultimaParadaSSvp"></a>
+                    <a name="//apple_ref/swift/Property/ultimaParada" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC12ultimaParadaSSvp">ultimaParada</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">ultimaParada</span><span class="p">:</span><span class="kt">String</span> <span class="o">=</span> <span class="s">""</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(py)mapa"></a>
+                    <a name="//apple_ref/swift/Property/mapa" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(py)mapa">mapa</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">mapa</span><span class="p">:</span><span class="kt">MKMapView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)viewWillAppear:"></a>
+                    <a name="//apple_ref/swift/Method/viewWillAppear(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)viewWillAppear:">viewWillAppear(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC8getDatosyyF"></a>
+                    <a name="//apple_ref/swift/Method/getDatos()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC8getDatosyyF">getDatos()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h1 id='getdatos' class='heading'>getDatos</h1>
+
+<p>Mediante Alamofire se genera la petición get a la url obtenida desde el objeto recibido por el segue invocado en la tabla de ViewControllerse espera recibir texto en formato JSON, se decodifica utilizando SwiftyJSON y se carga en memoria local.
+Se utiliza SwiftSpinner para mostrar views de carga de datos y errores, permite hacer mejor la UX.</p>
+<div class="aside aside-requires">
+    <p class="aside-title">Requires</p>
+    Alamofire, SwiftyJSON, SwiftySpinner
+
+</div>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    mostrarStops()
+
+</div>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    crearRuta()
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getDatos</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC12mostrarStopsyyF"></a>
+                    <a name="//apple_ref/swift/Method/mostrarStops()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC12mostrarStopsyyF">mostrarStops()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h1 id='mostrarstops' class='heading'>mostrarStops</h1>
+
+<p>Se obtienen las coordenadas a partir de las paradas cargados en memoria, se añaden al mapa mediante la cola principal de UI.
+Se define ultimaParada para animarla en crearRuta</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    crearRuta()
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mostrarStops</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16PruebaDomicilios25DetalleRutaViewControllerC05crearD0yyF"></a>
+                    <a name="//apple_ref/swift/Method/crearRuta()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16PruebaDomicilios25DetalleRutaViewControllerC05crearD0yyF">crearRuta()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">crearRuta</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)mapView:viewForAnnotation:"></a>
+                    <a name="//apple_ref/swift/Method/mapView(_:viewFor:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)mapView:viewForAnnotation:">mapView(_:viewFor:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="n">_</span> <span class="nv">mapView</span><span class="p">:</span> <span class="kt">MKMapView</span><span class="p">,</span> <span class="n">viewFor</span> <span class="nv">annotation</span><span class="p">:</span> <span class="kt">MKAnnotation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MKAnnotationView</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)mapView:rendererForOverlay:"></a>
+                    <a name="//apple_ref/swift/Method/mapView(_:rendererFor:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)mapView:rendererForOverlay:">mapView(_:rendererFor:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="n">_</span> <span class="nv">mapView</span><span class="p">:</span> <span class="kt">MKMapView</span><span class="p">,</span> <span class="n">rendererFor</span> <span class="nv">overlay</span><span class="p">:</span> <span class="kt">MKOverlay</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MKOverlayRenderer</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)didReceiveMemoryWarning"></a>
+                    <a name="//apple_ref/swift/Method/didReceiveMemoryWarning()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@PruebaDomicilios@objc(cs)DetalleRutaViewController(im)didReceiveMemoryWarning">didReceiveMemoryWarning()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-04-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

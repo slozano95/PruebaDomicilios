@@ -11,8 +11,8 @@ import SwiftyJSON
 
 /**
  Clase que define el objeto que representa cada parada disponible.
+ - Note: Ejemplo del texto en formato JSON esperado **{"lat": 4.678737,"lng": -74.066001}**
  */
-/// - Note: Ejemplo del texto en formato JSON esperado **{"lat": 4.678737,"lng": -74.066001}**
 class Stop{
     var lat:Double = 0.0
     var lng:Double = 0.0

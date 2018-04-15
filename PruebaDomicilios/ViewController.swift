@@ -19,8 +19,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var rutaSeleccionada:Ruta!
     
     @IBOutlet weak var tableView:UITableView!
-    /// Previo a mostrar el view, se define la barra de navegación y se definen colores de la UI.
-    /// - See also: Helper.setNavBar()
+    /* Previo a mostrar el view, se define la barra de navegación y se definen colores de la UI.
+     - See also: Helper.setNavBar()*/
     override func viewWillAppear(_ animated: Bool) {
         Helper.setNavBar(self, hideBackButton: true)
         self.view.backgroundColor = UIColor(hexString: Helper.ColorBarraNavegacion)
@@ -40,9 +40,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
      # getDatos
      Mediante Alamofire se genera la petición get a la url definida en Helper, se espera recibir texto en formato JSON, se decodifica utilizando SwiftyJSON y se carga en memoria local, se recarga la tabla para mostrar los datos si toda la operación fue exitosa.
      Se utiliza SwiftSpinner para mostrar views de carga de datos y errores, permite hacer mejor la UX.
+     - Requires: Alamofire, SwiftyJSON, SwiftySpinner
+     - SeeAlso: Helper.urlRutas
      */
-    /// - Requires: Alamofire, SwiftyJSON, SwiftySpinner
-    /// - SeeAlso: Helper.urlRutas
  
     func getDatos(){
         SwiftSpinner.show("Cargando Datos...")

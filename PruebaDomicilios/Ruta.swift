@@ -11,8 +11,8 @@ import SwiftyJSON
 
 /**
  Clase que define el objeto que representa cada ruta disponible.
+ - Note: Ejemplo del texto en formato JSON esperado **{"id": 1001,"name": "Ruta 01","description": "Colegio Colombia","stops_url": "https://api.myjson.com/bins/do6kx","img_url": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Bus-128.png"}**
  */
-/// - Note: Ejemplo del texto en formato JSON esperado **{"id": 1001,"name": "Ruta 01","description": "Colegio Colombia","stops_url": "https://api.myjson.com/bins/do6kx","img_url": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Bus-128.png"}**
 class Ruta{
     var id:Int = 0
     var name:String = ""

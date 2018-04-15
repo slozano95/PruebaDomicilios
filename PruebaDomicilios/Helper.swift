@@ -20,9 +20,9 @@ class Helper: NSObject {
     /**
      # setNavBar
      Permite definir la barra de navegación con una imagen, colores y tinte de la barra de navegación
+     - Parameter view: ViewController sobre el cual se cargará la configuración de la barra de navegación
+     - Parameter hideBackButton: booleano que define si se muestra o no el botón de navegación hacia atrás
      */
-    /// - Parameter view: ViewController sobre el cual se cargará la configuración de la barra de navegación
-    /// - Parameter hideBackButton: booleano que define si se muestra o no el botón de navegación hacia atrás
     static func setNavBar(_ view:UIViewController,hideBackButton:Bool){
         let imageView = UIImageView(image: UIImage(named: "logo_banner"))
         imageView.contentMode = UIViewContentMode.scaleAspectFit
@@ -36,10 +36,10 @@ class Helper: NSObject {
     /**
      # setNavBar
      Permite definir la barra de navegación con un texto, colores y tinte de la barra de navegación
+     - Parameter view: ViewController sobre el cual se cargará la configuración de la barra de navegación
+     - Parameter hideBackButton: booleano que define si se muestra o no el botón de navegación hacia atrás
+     - Parameter texto: titulo que se mostrará en la barra de navegación
      */
-    /// - Parameter view: ViewController sobre el cual se cargará la configuración de la barra de navegación
-    /// - Parameter hideBackButton: booleano que define si se muestra o no el botón de navegación hacia atrás
-    /// - Parameter texto: titulo que se mostrará en la barra de navegación
     static func setNavBarCustom(_ view:UIViewController,hideBackButton:Bool,texto:String){
         view.navigationItem.title = texto
         view.navigationItem.hidesBackButton = hideBackButton
@@ -50,13 +50,13 @@ class Helper: NSObject {
     /**
      # pulzo
      Permite dar animación de efecto pulzo sobre cualquier view.
+     - Parameter view: View sobre el cual se generará la animación
+     - Parameter duration: número de segundos que durará la animación
+     - Parameter start: factor de escala inicail de la animación
+     - Parameter end: factor de escala final de la animación
+     - Parameter autoreverse: booleano que define si la animación se rebobina
+     - Parameter repeatCount: número de veces que se repetirá la animación
      */
-    /// - Parameter view: View sobre el cual se generará la animación
-    /// - Parameter duration: número de segundos que durará la animación
-    /// - Parameter start: factor de escala inicail de la animación
-    /// - Parameter end: factor de escala final de la animación
-    /// - Parameter autoreverse: booleano que define si la animación se rebobina
-    /// - Parameter repeatCount: número de veces que se repetirá la animación
     static func pulzo(view: UIView,duration:Float,start:Float,end:Float,autoreverse:Bool,repeatCount:Float){
         let pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
         pulseAnimation.duration = CFTimeInterval(duration)
@@ -70,14 +70,14 @@ class Helper: NSObject {
 }
 /**
 Extensión de UIImageView con método auxiliar
+- Note: Tomado de https://gist.github.com/KyleGoslan/cd84969ee6c247955741b4af2e6b5ee2
 */
-/// - Note: Tomado de https://gist.github.com/KyleGoslan/cd84969ee6c247955741b4af2e6b5ee2
 extension UIImageView {
     /**
      # fromURL
      Permite obtener una imagen desde una url de modo asincrono y cargarla en un UIImageView
+     - Parameter urlString: url de la cual se obtendrá la imagen
      */
-    /// - Parameter urlString: url de la cual se obtendrá la imagen
     public func fromURL(urlString: String) {
         URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
             if error != nil { return }
@@ -90,14 +90,14 @@ extension UIImageView {
 }
 /**
 Extensión de UIColor con método auxiliar
-*/
-/// - Note: Tomado de https://gist.github.com/benhurott/d0ec9b3eac25b6325db32b8669196140
+- Note: Tomado de https://gist.github.com/benhurott/d0ec9b3eac25b6325db32b8669196140
+ */
 extension UIColor {
     /**
      # init
      Permite crear un UIColor a partir de su código de color en formato HEX
+     - Parameter hexString: String del color en formato HEX
      */
-    /// - Parameter hexString: String del color en formato HEX
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()
@@ -123,9 +123,9 @@ extension UIView{
     /**
      # addConstraintsWithFormat
      Permite añadir constraints a views creados mediante código
+     - Parameter format: formato base en que se definen los constraints
+     - Parameter views: lista de views sobre los cuales se aplicarán los constraints
      */
-    /// - Parameter format: formato base en que se definen los constraints
-    /// - Parameter views: lista de views sobre los cuales se aplicarán los constraints
     func addConstraintsWithFormat(format:String, views:UIView...){
         var viewsDictionary = [String:UIView]()
         for (index,view) in views.enumerated(){
@@ -139,8 +139,8 @@ extension UIView{
     /**
      # roundCorners
      Permite añadir esquinas redondeadas con un radio definido
+     - Parameter radius: radio que se generará
      */
-    /// - Parameter radius: radio que se generará
     func roundCorners(radius:CGFloat){
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
@@ -149,9 +149,9 @@ extension UIView{
     /**
      # withBorder
      Genera un borde sobre un view con un ancha y un color
+     - Parameter borderWidth: ancho del borde
+     - Parameter borderColor: color del borde
      */
-    /// - Parameter borderWidth: ancho del borde
-    /// - Parameter borderColor: color del borde
     func withBorder(borderWidth:CGFloat,borderColor:UIColor){
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth

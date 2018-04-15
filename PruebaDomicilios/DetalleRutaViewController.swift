@@ -15,9 +15,8 @@ import CoreLocation
 
 /**
  Clase que controla la interacción de la vista de detalles de ruta.
- */
- ///- Note: la variable RutaSeleccionada se debe asignar desde el prepare del segue que invoca esta clase
-
+ - Note: la variable RutaSeleccionada se debe asignar desde el prepare del segue que invoca esta clase
+*/
 
 class DetalleRutaViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
 
@@ -87,10 +86,11 @@ class DetalleRutaViewController: UIViewController,MKMapViewDelegate,CLLocationMa
      # getDatos
      Mediante Alamofire se genera la petición get a la url obtenida desde el objeto recibido por el segue invocado en la tabla de ViewControllerse espera recibir texto en formato JSON, se decodifica utilizando SwiftyJSON y se carga en memoria local.
      Se utiliza SwiftSpinner para mostrar views de carga de datos y errores, permite hacer mejor la UX.
+ 
+     - Requires: Alamofire, SwiftyJSON, SwiftySpinner
+     - SeeAlso: mostrarStops()
+     - SeeAlso: crearRuta()
      */
-    /// - Requires: Alamofire, SwiftyJSON, SwiftySpinner
-    /// - SeeAlso: mostrarStops()
-    /// - SeeAlso: crearRuta()
     func getDatos(){
         SwiftSpinner.show("Cargando Datos...")
         self.listaStops.removeAll()
@@ -124,8 +124,8 @@ class DetalleRutaViewController: UIViewController,MKMapViewDelegate,CLLocationMa
      # mostrarStops
      Se obtienen las coordenadas a partir de las paradas cargados en memoria, se añaden al mapa mediante la cola principal de UI.
      Se define ultimaParada para animarla en crearRuta
+     - SeeAlso: crearRuta()
      */
-    /// - SeeAlso: crearRuta()
     func mostrarStops(){
         var contador = 1
         for stop in listaStops {
